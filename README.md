@@ -3,25 +3,25 @@
 alt="logo">
 </p>
 
-# DEsarrollo web SSR - 2026A
+# Desarrollo web SSR - 2026A
 
-Repositorio de la Materia de DEsarrollo We SSR (Server Side Rendering)
-s
-# Contenido
+Repositorio de la Materia de Desarrollo We SSR (Server Side Rendering)
+
+# Contenido 
 
 - Ramas de Contenido
 - Proyecto eje de la materia
 
-# 🎯sObjetivos
+# 🎯Objetivos
 
-Documentar los aprints del proyecto que se desarrollara a lo largo del curso
+Documentar los sprints del proyecto que se desarrollara a lo largo del curso
 
 # Ramas del proyecto
 
 - 'dev' rama de desarrollo
-- 'main' ramaprincipal
+- 'main' rama principal
 
-# Conveciones de Comits
+# Convenciones de Commits
 
 |Codigo|Descripcion|
 |-----------|-------------|
@@ -35,6 +35,11 @@ Documentar los aprints del proyecto que se desarrollara a lo largo del curso
 |chore:🦴|Cambios  en dependencias|
 |ci: 🤖  |Cambios en el CI/CD|
 |revert:🐟|Reveresion de comits|
+
+# Stack
+
+## Back-end
+- [node](./.github/doc/node.md)
 
 **Ejemplos:**
 
