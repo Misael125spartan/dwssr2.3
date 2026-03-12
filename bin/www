@@ -6,13 +6,16 @@
 
 var app = require('../app');
 var debug = require('debug')('dwssr2.3:server');
+var info = require('debug')('dwssr2.3:info');
 var http = require('http');
 
 /**
  * Get port from environment and store in Express.
  */
 
+info('🔍 Normalizin port');
 var port = normalizePort(process.env.PORT || '3000');
+info('✅ Port normalized:' + port);
 app.set('port', port);
 
 /**
@@ -87,4 +90,5 @@ function onListening() {
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
+  console.log(`🫐Listening on ${bind}`);
 }
