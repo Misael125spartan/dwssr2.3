@@ -1,6 +1,7 @@
 {
   "name": "dwssr2.3",
   "version": "0.0.0",
+  "type": "module",
   "private": true,
   "scripts": {
     "start": "DEBUG=dwssr2.3:* node ./bin/www"
