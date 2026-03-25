@@ -9,7 +9,8 @@ router.get('/',function (req, res, next) {
     res.render('author', {
         name: 'Misael',
         lastname: 'De Jesus',
-        matricula: 211130203     
+        matricula: 211130203,    
+        imagen: '/images/mi_foto.jpeg' 
     });
 })
 
