@@ -8,7 +8,9 @@ import path from 'node:path'; // Importamos path usando ES Modules
 import cookieParser from 'cookie-parser'; // Importamos cookieParser usando ES Modules
 // var logger = require('morgan');
 import logger from 'morgan'; // Importamos logger usando ES Modules
+import hbs from 'hbs';
 import {fileURLToPath} from 'url'; // Importamos fileURLToPath para recrear __filename y __dirname
+
 
 // Recreando variables de path para ES Modules
 const __filename = fileURLToPath(import.meta.url);
@@ -28,16 +30,25 @@ import indexRouter from '#routes/index.js';// Importamos el enrutador de index
 import usersRouter from '#routes/users.js';// Importamos el enrutador de users
 import authorRouter from '#routes/author.js'; // Importamos el enrutador de author
 
+//importando el registrador de helper
+import { registerViteHelper } from './lib/vite.js'; 
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+//registrando helper para ENGINE
+registerViteHelper(hbs)
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+//archivos estaticos
+if(process.env.NODE_ENV == "production" ){
 app.use(express.static(path.join(__dirname, '../public')));// variable que el sistema provee para acceder a la carpeta public, 
+}
 // donde se encuentran los archivos estáticos como css, js e imágenes
+//archivos estaticos 
 console.log('Ruta de archivos estáticos:', path.join(__dirname, '../public'));
 
 // uso de las rutas y modificacion de la ruta para el index,
