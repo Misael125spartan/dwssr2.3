@@ -3,7 +3,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "nodemon server/bin/www.js"
+    "start": "NODE_ENV=production  node ./server/bin/www.js",
+    "dev":"DEBUG=dwssr2.3:* nodemon ./server/bin/www",
+    "dev:vite": "vite",
+    "dev:all": "concurrently\"npm run dev\"\"npm run dev:vite\"",
+    "build:front":"vite build",
+    "preview": "npm rum build:front && npm rum start"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
