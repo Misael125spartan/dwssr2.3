@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+@plugin "daisyui/index.js";
+
+/* Esta línea define la ruta de las plantillas de handlebars */
+@source "../../server/views/**/*.hbs";
+
+

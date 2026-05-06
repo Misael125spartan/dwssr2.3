@@ -1,0 +1,11 @@
+body{
+    padding: 50px;
+    font: 14px "lucia Grande", Helvetica;
+}
+
+h1 { 
+    color: teal;
+}
+button, p{
+    margin-top: 20px;
+}
