@@ -1,6 +1,6 @@
 # 🟩 NodeJs
 
-[Node](https://nodejs.org/es) es un entorno de ejecucion  Javascript 
+[Node](https://nodejs.org/es) es un entorno de ejecucion Javascript
 multi plataforma de codigo abierto y grautuito
 
 Dentro de los frameworks para crear servidores web para Node tenemos:
@@ -15,10 +15,10 @@ Dentro de los frameworks para crear servidores web para Node tenemos:
 
 Express es un _framework_ para Node,
 minomo, flexible no imposotovo tanto
-en le flujo de trabajo como en la 
+en le flujo de trabajo como en la
 arquitectura del proyecto.
 
-El presente poryecto estara desarrollado 
+El presente poryecto estara desarrollado
 en ExpressJs.
 
 # 📦 ESM
@@ -36,13 +36,13 @@ Migrar a ESM ofrece las siguientes ventajas:
 - Importante asincronas con `import()`
 - Es el futuro del ecosistema
 
-# 😈 Nodemon 
+# 😈 Nodemon
 
 [Niodemon](https://nodemon.io/) es un paquete que actua como
-un _wrapper_ (envoltirio) para Node.Js 
-su funcion es observar archivos 
-en el directorio de tu proyecto y 
-reiniciar cuando detectan cambios 
+un _wrapper_ (envoltirio) para Node.Js
+su funcion es observar archivos
+en el directorio de tu proyecto y
+reiniciar cuando detectan cambios
 guardados.
 
 # ✂️ Alienses
@@ -50,5 +50,12 @@ guardados.
 Los **import alisses** tambien conocidos como _path aliasses_
 o _module aliasses_ son atajos o alias que podemos configurar  
 para simplificar la forma en que importamos en nuestra
-aplicacion 
+aplicacion
 
+# Loggers
+
+_winston-daily-rotate-file_ es un transporte de winston
+que permite la rotacion Automatica de archivos de logs
+basada en fechas.
+Esto evita que los archivos de log crezcan
+sin control
