@@ -3,6 +3,8 @@ import express from "express";
 import path from "node:path";
 import cookieParser from "cookie-parser";
 import morgan from "morgan";
+// Importando Winston logger (en minúscula para seguir el estándar)
+import logger from "./lib/winston.js";
 import hbs from "hbs";
 import { fileURLToPath } from "node:url";
 
@@ -13,6 +15,8 @@ import authorRouter from "#routes/author.js";
 
 // Helper de Vite
 import { registerViteHelper } from "./lib/vite.js";
+
+// ELIMINADO: import { loggers } from "winston"; <-- Esto causaba el error
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -26,7 +30,19 @@ app.set("view engine", "hbs");
 // REGISTRO DEL HELPER
 registerViteHelper(hbs);
 
-app.use(morgan("dev"));
+// Redirigiendo el flujo de logs de morgan a winston
+// morgan ---> [logs] ---> Winstons ---> transportes
+app.use(
+  morgan("dev", {
+    stream: {
+      // Usamos 'logger' (el que importamos) y su nivel '.info'
+      write: (msg) => logger.info(msg.trim()),
+    },
+  }),
+);
+
+// ELIMINADO: app.use(morgan("dev")); <-- Estaba duplicado
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
