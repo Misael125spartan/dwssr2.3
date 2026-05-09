@@ -3,10 +3,9 @@ import express from "express";
 const router = express.Router();
 // import logger (CORREGIDO: L minúscula)
 import logger from "../lib/winston.js";
-import { rootCertificates } from "node:tls";
 
 /* GET home page. */
-router.get("/", function (req, res, next) {
+router.get("/", function (req, res,) {
   res.render("index", {
     title: "Proyecto Asombroso 💫💫",
     author: "Misael de Jesus",
