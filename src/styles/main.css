@@ -1,8 +1,21 @@
 @import "tailwindcss";
+@plugin "daisyui";
 
-@plugin "daisyui/index.js";
+/*
+Esta linea define la ruta de las plantillas Handlebars
+paraque Tailwindcss detecte las clases que aportan estilos
+*/
 
-/* Esta línea define la ruta de las plantillas de handlebars */
 @source "../../server/views/**/*.hbs";
 
+/* Estilos principales */
 
+body{
+    padding: 50px;
+    font: 14px "Lucia Grande", Helvetica, Arial, sans-serif;
+
+}
+
+h1{
+    color: #00b7ff
+}

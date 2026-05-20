@@ -5,7 +5,6 @@ import cookieParser from "cookie-parser";
 import morgan from "morgan";
 // Importando Winston logger (en minúscula para seguir el estándar)
 import logger from "./lib/winston.js";
-import hbs from "hbs";
 import { fileURLToPath } from "node:url";
 
 // Rutas
@@ -13,22 +12,23 @@ import indexRouter from "#routes/index.js";
 import usersRouter from "#routes/users.js";
 import authorRouter from "#routes/author.js";
 
-// Helper de Vite
-import { registerViteHelper } from "./lib/vite.js";
+// Importando el confifuracion de Handlebars
+import { configureHendlebars } from "./lib/handlebars.js";
 
 // ELIMINADO: import { loggers } from "winston"; <-- Esto causaba el error
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+
+logger.info("Creando instancia de expressjs")
 const app = express();
+logger.info("Inicia configuracion de express")
+configureHendlebars(app)
 
 // Configuración del motor de plantillas
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
-
-// REGISTRO DEL HELPER
-registerViteHelper(hbs);
 
 // Redirigiendo el flujo de logs de morgan a winston
 // morgan ---> [logs] ---> Winstons ---> transportes
